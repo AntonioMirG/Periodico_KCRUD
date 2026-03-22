@@ -29,12 +29,12 @@ namespace Periodico_KCRUD.Vistas
 
                 if (resultado != null)
                 {
-                    // 1. Obtenemos si es admin (true/1 o false/0)
+                    //Obtenemos si es admin (true/1 o false/0)
                     bool esAdmin = Convert.ToBoolean(resultado);
 
                     MessageBox.Show("¡Bienvenido al Periódico!");
 
-                    // 2. LA CLAVE: Pasamos 'esAdmin' Y pasamos 'true' (porque ya se logueó)
+                    //Pasamos 'esAdmin' Y pasamos 'true' (porque ya se logueó)
                     // Esto es lo que apagará el Timer definitivamente
                     FormHome home = new FormHome(esAdmin, true);
 

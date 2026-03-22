@@ -1,3 +1,6 @@
 <Solution>
+  <Project Path="Instalador_KCRUD/Instalador_KCRUD.vdproj" Type="Installer">
+    <Build />
+  </Project>
   <Project Path="Periodico_KCRUD/Periodico_KCRUD.csproj" />
 </Solution>

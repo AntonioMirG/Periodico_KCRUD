@@ -33,8 +33,8 @@ namespace Periodico_KCRUD.Vistas
             finally { bd.Cerrar(); }
         }
 
-        // 1. EVENTO PARA CARGAR DATOS EN LOS TEXTBOX AL HACER CLIC
-        // Ve al rayo amarillo del DataGridView y busca "CellClick"
+        //EVENTO PARA CARGAR DATOS EN LOS TEXTBOX AL HACER CLIC
+        
         private void dgvNoticias_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
@@ -48,7 +48,7 @@ namespace Periodico_KCRUD.Vistas
             }
         }
 
-        // 2. MÉTODO ACTUALIZAR (El que te faltaba)
+        //MÉTODO ACTUALIZAR
         private void btnActualizar_Click_1(object sender, EventArgs e)
         {
             if (idSeleccionado == -1)
@@ -110,7 +110,7 @@ namespace Periodico_KCRUD.Vistas
             catch (Exception ex) { MessageBox.Show("ERROR: " + ex.Message); }
         }
 
-        // MÉTODO BORRAR (Actualizado para usar la variable idSeleccionado)
+        // MÉTODO BORRAR 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             if (idSeleccionado != -1)

@@ -10,7 +10,7 @@ namespace Periodico_KCRUD.Datos
 
     public class ConexionBD
     {
-        // Esta cadena apunta a tu LocalDB
+        
         public string cadena = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=PeriodicoDB;Integrated Security=True";
         public SqlConnection conectar = new SqlConnection();
 

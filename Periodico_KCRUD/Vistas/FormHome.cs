@@ -19,7 +19,7 @@ namespace Periodico_KCRUD.Vistas
             this.esAdmin = permisoAdmin;
             this.usuarioLogueado = estaLogueado;
 
-            // 1. ASIGNACIÓN DE TÍTULOS (Crucial para que el Timer sepa si debe morir)
+            //ASIGNACIÓN DE TÍTULOS (Crucial para que el Timer sepa si debe parar)
             if (this.usuarioLogueado)
             {
                 this.Text = esAdmin ? "Panel de Administración - K-CRUD" : "Bienvenido Lector - K-CRUD";
@@ -29,11 +29,11 @@ namespace Periodico_KCRUD.Vistas
             else
             {
                 this.Text = "K-CRUD NEWS - Portal de Noticias";
-                timerCookies.Interval = 10000; // 10 segundos
+                timerCookies.Interval = 5000; // 5 segundos
                 timerCookies.Start();
             }
 
-            // 2. Control de interfaz
+            //Control de interfaz
             if (administracionToolStripMenuItem != null)
                 administracionToolStripMenuItem.Visible = esAdmin;
 
@@ -73,7 +73,7 @@ namespace Periodico_KCRUD.Vistas
 
         private void CrearTarjetaNoticia(string titulo, string contenido, string fecha)
         {
-            // 1. Contenedor de la tarjeta
+            //Contenedor de la tarjeta
             Panel card = new Panel
             {
                 Size = new Size(panelNoticias.Width - 40, 160),
@@ -81,14 +81,14 @@ namespace Periodico_KCRUD.Vistas
                 Margin = new Padding(20, 10, 20, 10)
             };
 
-            // 2. DIBUJAR BORDE (Versión simplificada e infalible)
+            
             card.Paint += (s, e) => {
                 Rectangle rect = card.ClientRectangle;
                 // Dibujamos el borde usando 5 parámetros claros
                 ControlPaint.DrawBorder(e.Graphics, rect, Color.LightGray, ButtonBorderStyle.Solid);
             };
 
-            // 3. Etiquetas (Meta, Titular y Cuerpo)
+            //Etiquetas (Titular y Cuerpo)
             Label lblMeta = new Label
             {
                 Text = "ACTUALIDAD | " + fecha,
@@ -115,14 +115,14 @@ namespace Periodico_KCRUD.Vistas
                 Size = new Size(card.Width - 30, 45)
             };
 
-            // 4. Montaje de la tarjeta
+            //Montaje de la tarjeta
             card.Controls.Add(lblMeta);
             card.Controls.Add(lblTit);
             card.Controls.Add(lblCuerpo);
             panelNoticias.Controls.Add(card);
         }
 
-        // --- EVENTOS CORREGIDOS ---
+        // Eventos
 
         private void gestionarNoticiasToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -133,7 +133,7 @@ namespace Periodico_KCRUD.Vistas
 
         private void iniciarSesionToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            // MATAMOS EL TIMER ANTES DE OCULTAR LA VENTANA (Evita el fantasma)
+            //Se para el timer para evitar que se abra la ventana de login y el mensaje de cookies al mismo tiempo, lo cual sería molesto
             timerCookies.Stop();
             timerCookies.Enabled = false;
 
@@ -144,7 +144,7 @@ namespace Periodico_KCRUD.Vistas
 
         private void cerrarSesionToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            timerCookies.Stop(); // IMPORTANTE
+            timerCookies.Stop();  
             FormHome volverAEmpezar = new FormHome(false, false); // Volver como visitante
             volverAEmpezar.Show();
             this.Dispose(); // Matar la sesión actual
@@ -161,7 +161,7 @@ namespace Periodico_KCRUD.Vistas
             FormAyuda ayuda = new FormAyuda();
 
             // La abrimos como ShowDialog para que no puedan tocar el Home 
-            // hasta que cierren la ayuda (se ve más profesional)
+            // hasta que cierren la ayuda
             ayuda.ShowDialog();
         }
 
@@ -178,7 +178,7 @@ namespace Periodico_KCRUD.Vistas
             timerCookies.Stop();
             MessageBox.Show("Regístrate para eliminar estos anuncios.", "Aviso");
 
-            // Solo reiniciamos si sigue siendo visitante
+            //Se reinicia si sigue siendo visitante
             if (this.Text == "K-CRUD NEWS - Portal de Noticias")
                 timerCookies.Start();
         }
