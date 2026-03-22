@@ -35,6 +35,7 @@
             btnEliminar = new Button();
             label1 = new Label();
             label2 = new Label();
+            btnActualizar = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvNoticias).BeginInit();
             SuspendLayout();
             // 
@@ -43,19 +44,20 @@
             dgvNoticias.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvNoticias.Location = new Point(26, 51);
             dgvNoticias.Name = "dgvNoticias";
-            dgvNoticias.Size = new Size(271, 365);
+            dgvNoticias.Size = new Size(507, 365);
             dgvNoticias.TabIndex = 0;
+            dgvNoticias.CellClick += dgvNoticias_CellClick;
             // 
             // txtTitulo
             // 
-            txtTitulo.Location = new Point(337, 94);
+            txtTitulo.Location = new Point(564, 78);
             txtTitulo.Name = "txtTitulo";
             txtTitulo.Size = new Size(100, 23);
             txtTitulo.TabIndex = 1;
             // 
             // txtContenido
             // 
-            txtContenido.Location = new Point(337, 166);
+            txtContenido.Location = new Point(564, 150);
             txtContenido.Multiline = true;
             txtContenido.Name = "txtContenido";
             txtContenido.Size = new Size(100, 23);
@@ -63,7 +65,7 @@
             // 
             // btnGuardar
             // 
-            btnGuardar.Location = new Point(337, 233);
+            btnGuardar.Location = new Point(564, 217);
             btnGuardar.Name = "btnGuardar";
             btnGuardar.Size = new Size(75, 23);
             btnGuardar.TabIndex = 3;
@@ -73,17 +75,18 @@
             // 
             // btnEliminar
             // 
-            btnEliminar.Location = new Point(431, 233);
+            btnEliminar.Location = new Point(658, 217);
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Size = new Size(75, 23);
             btnEliminar.TabIndex = 4;
             btnEliminar.Text = "Eliminar";
             btnEliminar.UseVisualStyleBackColor = true;
+            btnEliminar.Click += btnEliminar_Click;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(337, 76);
+            label1.Location = new Point(564, 60);
             label1.Name = "label1";
             label1.Size = new Size(38, 15);
             label1.TabIndex = 5;
@@ -92,17 +95,28 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(337, 148);
+            label2.Location = new Point(564, 132);
             label2.Name = "label2";
             label2.Size = new Size(63, 15);
             label2.TabIndex = 6;
             label2.Text = "Contenido";
+            // 
+            // btnActualizar
+            // 
+            btnActualizar.Location = new Point(564, 270);
+            btnActualizar.Name = "btnActualizar";
+            btnActualizar.Size = new Size(75, 23);
+            btnActualizar.TabIndex = 7;
+            btnActualizar.Text = "Actualizar";
+            btnActualizar.UseVisualStyleBackColor = true;
+            btnActualizar.Click += btnActualizar_Click_1;
             // 
             // FormGestionNoticias
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(btnActualizar);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(btnEliminar);
@@ -126,5 +140,6 @@
         private Button btnEliminar;
         private Label label1;
         private Label label2;
+        private Button btnActualizar;
     }
 }

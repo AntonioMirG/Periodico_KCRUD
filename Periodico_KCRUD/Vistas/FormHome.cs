@@ -155,6 +155,16 @@ namespace Periodico_KCRUD.Vistas
             Application.Exit();
         }
 
+        private void acercaDeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // Creamos la instancia de la ventana de ayuda
+            FormAyuda ayuda = new FormAyuda();
+
+            // La abrimos como ShowDialog para que no puedan tocar el Home 
+            // hasta que cierren la ayuda (se ve más profesional)
+            ayuda.ShowDialog();
+        }
+
         private void timerCookies_Tick(object sender, EventArgs e)
         {
             // FILTRO DE SEGURIDAD: Si el título no es de visitante, el timer se suicida
