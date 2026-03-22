@@ -1,17 +1,17 @@
+using Periodico_KCRUD.Vistas; // <--- IMPORTANTE: Para que reconozca tus carpetas
+
 namespace Periodico_KCRUD
 {
     internal static class Program
     {
-        /// <summary>
-        ///  The main entry point for the application.
-        /// </summary>
         [STAThread]
         static void Main()
         {
-            // To customize application configuration such as set high DPI settings or default font,
-            // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new Form1());
+
+            // CAMBIO AQUÍ: En lugar de Form1, abrimos el Home.
+            // Le pasamos 'false' para que entre como Lector y salte el Timer.
+            Application.Run(new FormHome(false));
         }
     }
 }
