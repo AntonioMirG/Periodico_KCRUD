@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Periodico_KCRUD")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+427f748a2f241dc5ff7c6e0954d7e9a91943d853")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6e03a81b0b89c30432e67437ca3f56e1bef2e245")]
 [assembly: System.Reflection.AssemblyProductAttribute("Periodico_KCRUD")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Periodico_KCRUD")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

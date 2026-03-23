@@ -1,25 +1,41 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Microsoft.Data.SqlClient;
+using System.Data;
+using System.Windows.Forms; 
 
 namespace Periodico_KCRUD.Datos
 {
-    using Microsoft.Data.SqlClient;
-
     public class ConexionBD
     {
-        
-        public string cadena = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=PeriodicoDB;Integrated Security=True";
-        public SqlConnection conectar = new SqlConnection();
+        public string cadena = @"Data Source=.\SQLEXPRESS;Initial Catalog=PeriodicoDB;Integrated Security=True;TrustServerCertificate=True";
+        public SqlConnection conectar;
 
         public ConexionBD()
         {
-            conectar.ConnectionString = cadena;
+            conectar = new SqlConnection(cadena);
         }
 
-        public void Abrir() => conectar.Open();
-        public void Cerrar() => conectar.Close();
+        public void Abrir()
+        {
+            try
+            {
+                if (conectar.State == ConnectionState.Closed)
+                {
+                    conectar.Open();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error de conexión a la base de datos: " + ex.Message, "Error Crítico", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        public void Cerrar()
+        {
+            if (conectar.State == ConnectionState.Open)
+            {
+                conectar.Close();
+            }
+        }
     }
 }

@@ -15,7 +15,7 @@
     {
         "Entry"
         {
-        "MsmKey" = "8:_2A612BF3D58D4412AE810EF38427B697"
+        "MsmKey" = "8:_D11E9239A7BA4301BCAF2847D5DCF50C"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -37,6 +37,22 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
+            }
         }
         "Release"
         {
@@ -53,6 +69,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
     }
     "Deployable"
@@ -70,6 +94,16 @@
         {
             "LaunchCondition"
             {
+                "{A06ECF26-33A3-4562-8140-9B0E340D4F24}:_CE940319F9074D4FA182D1F52B587250"
+                {
+                "Name" = "8:.NET Core"
+                "Message" = "8:[VSDNETCOREMSG]"
+                "AllowLaterVersions" = "11:FALSE"
+                "InstallUrl" = "8:https://dotnet.microsoft.com/download/dotnet-core/[NetCoreVerMajorDotMinor]"
+                "IsNETCore" = "11:TRUE"
+                "Architecture" = "2:0"
+                "Runtime" = "2:0"
+                }
             }
         }
         "File"
@@ -131,7 +165,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Instalador_KCRUD"
         "ProductCode" = "8:{084FBBF5-0B73-4999-AD11-C7AA94276D75}"
-        "PackageCode" = "8:{E986D3AC-4247-489B-B873-09AC7DE8DAB0}"
+        "PackageCode" = "8:{247583FD-2103-43D4-91A1-23EB5E9809BB}"
         "UpgradeCode" = "8:{45D1B8C7-E38B-49F7-BF37-ADBA328D3131}"
         "AspNetVersion" = "8:2.0.50727.0"
         "RestartWWWService" = "11:FALSE"
@@ -251,6 +285,20 @@
         }
         "Shortcut"
         {
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_A77F751C928D4751BC55DD9463D78C58"
+            {
+            "Name" = "8:Periodico K-CRUD"
+            "Arguments" = "8:"
+            "Description" = "8:"
+            "ShowCmd" = "3:1"
+            "IconIndex" = "3:0"
+            "Transitive" = "11:FALSE"
+            "Target" = "8:_D11E9239A7BA4301BCAF2847D5DCF50C"
+            "Folder" = "8:_992094F6A9AC45BCA860FAB59CE2DCCB"
+            "WorkingFolder" = "8:_B3C199DE640C4A6E9294F03DD2EB2AC6"
+            "Icon" = "8:"
+            "Feature" = "8:"
+            }
         }
         "UserInterface"
         {
@@ -650,9 +698,9 @@
         }
         "ProjectOutput"
         {
-            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_2A612BF3D58D4412AE810EF38427B697"
+            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_D11E9239A7BA4301BCAF2847D5DCF50C"
             {
-            "SourcePath" = "8:..\\Periodico_KCRUD\\obj\\Debug\\net8.0-windows\\Periodico_KCRUD.dll"
+            "SourcePath" = "8:..\\Periodico_KCRUD\\obj\\Debug\\net8.0-windows\\apphost.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_B3C199DE640C4A6E9294F03DD2EB2AC6"
@@ -671,7 +719,7 @@
             "IsolateTo" = "8:"
             "ProjectOutputGroupRegister" = "3:1"
             "OutputConfiguration" = "8:"
-            "OutputGroupCanonicalName" = "8:Built"
+            "OutputGroupCanonicalName" = "8:PublishItems"
             "OutputProjectGuid" = "8:{61B80693-CCB4-964E-4E12-9E9608716448}"
             "ShowKeyOutput" = "11:TRUE"
                 "ExcludeFilters"
